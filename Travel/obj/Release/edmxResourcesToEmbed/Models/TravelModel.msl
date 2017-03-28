@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelModelStoreContainer" CdmEntityContainer="TravelModelContainer">
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelModel.Site)">
+        <MappingFragment StoreEntitySet="Sites">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="SiteLocation" ColumnName="SiteLocation" />
+          <ScalarProperty Name="SiteDestination" ColumnName="SiteDestination" />
+          <ScalarProperty Name="SiteDescription" ColumnName="SiteDescription" />
+          <ScalarProperty Name="SiteAvatar" ColumnName="SiteAvatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures1">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelModel.Picture)">
+        <MappingFragment StoreEntitySet="Pictures1">
+          <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+          <ScalarProperty Name="PicturesURL" ColumnName="PicturesURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SitePictures" TypeName="TravelModel.SitePictures" StoreEntitySet="Pictures1">
+      <EndProperty Name="Site">
+        <ScalarProperty Name="SiteId" ColumnName="Site_SiteId" />
+      </EndProperty>
+      <EndProperty Name="Pictures">
+        <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

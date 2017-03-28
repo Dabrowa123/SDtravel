@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-Travel-20161221101540.mdf;Initial Catalog=aspnet-Travel-20161221101540;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="TravelModelContainer-Web.config Connection String" description="TravelModelContainer Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.TravelModel.csdl|res://*/Models.TravelModel.ssdl|res://*/Models.TravelModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(localDB)\v11.0;initial catalog=TravelDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TravelModelContainer']/@connectionString" />
+  </parameter>
+</parameters>

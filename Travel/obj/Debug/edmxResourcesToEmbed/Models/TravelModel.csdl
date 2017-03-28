@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TravelModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="TravelModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sites" EntityType="TravelModel.Site" />
+    <EntitySet Name="Pictures1" EntityType="TravelModel.Picture" />
+    <AssociationSet Name="SitePictures" Association="TravelModel.SitePictures">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Pictures" EntitySet="Pictures1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="SiteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteName" Type="String" Nullable="false" />
+    <Property Name="SiteLocation" Type="String" Nullable="false" />
+    <Property Name="SiteDestination" Type="String" Nullable="false" />
+    <Property Name="SiteDescription" Type="String" Nullable="false" />
+    <NavigationProperty Name="Picture" Relationship="TravelModel.SitePictures" FromRole="Site" ToRole="Pictures" />
+    <Property Name="SiteAvatar" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PicturesURL" Type="String" Nullable="false" />
+    <NavigationProperty Name="Site" Relationship="TravelModel.SitePictures" FromRole="Pictures" ToRole="Site" />
+  </EntityType>
+  <Association Name="SitePictures">
+    <End Type="TravelModel.Site" Role="Site" Multiplicity="1" />
+    <End Type="TravelModel.Picture" Role="Pictures" Multiplicity="*" />
+  </Association>
+</Schema>

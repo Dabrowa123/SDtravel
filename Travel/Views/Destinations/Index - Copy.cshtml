@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Travel.Models.Site>
+
+
+@{
+    ViewBag.Title = "Europe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row destination-bar">
+@using (Html.BeginForm("Index", "Destinations", FormMethod.Get))
+{
+    <br>
+    <br>
+    <br>
+    <p>
+        Hotel: @Html.TextBox("SearchString")
+        Country: @Html.DropDownList("SiteLocation", "All")
+        Direction: @Html.DropDownList("siteDestination", "All")
+        
+        <input class="btn" type="submit" value="Filter" />
+    </p>
+}
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table destination-table">
+            <tr>
+                <th class=".avatar-column">
+                </th>
+                <th>
+                    Hotel
+                </th>
+                <th>
+                    Country
+                </th>
+                <th>
+                    Direction
+                </th>
+                <th>
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class=".avatar-column">
+                        <img class="avatar" src="~/Content/Images/canary.jpg" alt="avatar" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SiteName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SiteLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SiteDestination)
+                    </td>
+
+
+                    <td>
+
+                        @Html.ActionLink("Details", "TravelDescription", "Sites", new { id = item.SiteId }, null)
+                    </td>
+                    <td></td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

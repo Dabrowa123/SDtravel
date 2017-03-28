@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TravelModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TravelModelStoreContainer">
+    <EntitySet Name="Sites" EntityType="TravelModel.Store.Sites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pictures1" EntityType="TravelModel.Store.Pictures1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SitePictures" Association="TravelModel.Store.SitePictures">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Pictures" EntitySet="Pictures1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Sites">
+    <Key>
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="SiteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteLocation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteDestination" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteAvatar" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pictures1">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PicturesURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Site_SiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="SitePictures">
+    <End Role="Site" Type="TravelModel.Store.Sites" Multiplicity="1" />
+    <End Role="Pictures" Type="TravelModel.Store.Pictures1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="SiteId" />
+      </Principal>
+      <Dependent Role="Pictures">
+        <PropertyRef Name="Site_SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TravelModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TravelModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sites" EntityType="TravelModel.Site" />
+          <EntitySet Name="Pictures1" EntityType="TravelModel.Picture" />
+          <AssociationSet Name="SitePictures" Association="TravelModel.SitePictures">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Pictures" EntitySet="Pictures1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" Nullable="false" />
+          <Property Name="SiteLocation" Type="String" Nullable="false" />
+          <Property Name="SiteDestination" Type="String" Nullable="false" />
+          <Property Name="SiteDescription" Type="String" Nullable="false" />
+          <NavigationProperty Name="Picture" Relationship="TravelModel.SitePictures" FromRole="Site" ToRole="Pictures" />
+          <Property Name="SiteAvatar" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="PictureId" />
+          </Key>
+          <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicturesURL" Type="String" Nullable="false" />
+          <NavigationProperty Name="Site" Relationship="TravelModel.SitePictures" FromRole="Pictures" ToRole="Site" />
+        </EntityType>
+        <Association Name="SitePictures">
+          <End Type="TravelModel.Site" Role="Site" Multiplicity="1" />
+          <End Type="TravelModel.Picture" Role="Pictures" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelModelStoreContainer" CdmEntityContainer="TravelModelContainer">
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelModel.Site)">
+        <MappingFragment StoreEntitySet="Sites">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="SiteLocation" ColumnName="SiteLocation" />
+          <ScalarProperty Name="SiteDestination" ColumnName="SiteDestination" />
+          <ScalarProperty Name="SiteDescription" ColumnName="SiteDescription" />
+          <ScalarProperty Name="SiteAvatar" ColumnName="SiteAvatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures1">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelModel.Picture)">
+        <MappingFragment StoreEntitySet="Pictures1">
+          <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+          <ScalarProperty Name="PicturesURL" ColumnName="PicturesURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SitePictures" TypeName="TravelModel.SitePictures" StoreEntitySet="Pictures1">
+      <EndProperty Name="Site">
+        <ScalarProperty Name="SiteId" ColumnName="Site_SiteId" />
+      </EndProperty>
+      <EndProperty Name="Pictures">
+        <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

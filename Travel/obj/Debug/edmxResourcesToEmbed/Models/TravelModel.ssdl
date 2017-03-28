@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TravelModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TravelModelStoreContainer">
+    <EntitySet Name="Sites" EntityType="TravelModel.Store.Sites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pictures1" EntityType="TravelModel.Store.Pictures1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SitePictures" Association="TravelModel.Store.SitePictures">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Pictures" EntitySet="Pictures1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Sites">
+    <Key>
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="SiteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteLocation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteDestination" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SiteAvatar" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pictures1">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PicturesURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Site_SiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="SitePictures">
+    <End Role="Site" Type="TravelModel.Store.Sites" Multiplicity="1" />
+    <End Role="Pictures" Type="TravelModel.Store.Pictures1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="SiteId" />
+      </Principal>
+      <Dependent Role="Pictures">
+        <PropertyRef Name="Site_SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

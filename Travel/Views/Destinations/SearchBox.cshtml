@@ -1,0 +1,25 @@
+﻿@using Travel.Models
+
+@model Site
+
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Index", "Destinations", FormMethod.Get))
+{
+<div class="search-form">
+<p>
+    Find Your perfect Holidays!
+</p>
+<p>
+
+    Hotel: @Html.TextBox("SearchString")
+
+    Country: @Html.DropDownList("SiteLocation", "All")
+
+    Direction: @Html.DropDownList("SiteDestination", "All")
+    
+    <input type="submit" value="Search" />
+</p>
+</div>
+}

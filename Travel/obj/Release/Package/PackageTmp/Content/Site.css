@@ -1,0 +1,618 @@
+﻿/*Slide in elements---------------------------------------------------------------------------------------------------*/
+
+		.slideanim {
+			visibility: hidden;
+		}
+
+        .slide1 {
+			visibility: hidden;
+		}
+
+		.slide2 {
+		    animation-name: slide2;
+		    -webkit-animation-name: slide2;
+		    animation-duration: 2s;
+		    -webkit-animation-duration: 2s;
+		    visibility: visible;
+	    }
+
+		@keyframes slide2 {
+			0% {
+				 opacity: 0;
+				transform: translateY(70%);
+			}
+			100% {
+				 opacity: 1;
+				transform: translateY(0%);
+			}
+	    }
+
+		@-webkit-keyframes slide2 {
+			0% {
+				opacity: 0;
+				-webkit-transform: translateY(70%);
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: translateY(0%);
+			}
+		}
+      
+
+        .vistest {
+			visibility: hidden;
+		}
+
+
+
+        .body {
+            margin: 0;
+            padding: 0;
+			font-size: 100%;
+            max-width: 100%;
+		}
+
+        .container {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+
+
+/*Navbar---------------------------------------------------------------------------------------------------*/
+
+		.dropdown-menu li a {
+			color: #000 !important;
+		}
+
+		.dropdown-menu li a:hover {
+			background-color: red !important;
+		}
+
+		.navbar {
+			margin-bottom: 0;
+			background-color: #2d2d30;
+			border: 0;
+			font-size: 11px !important;
+			letter-spacing: 4px;
+			opacity:0.95;
+		}
+
+		.navbar li a, .navbar .navbar-brand {
+			color: #d5d5d5 !important;
+		}
+
+		.navbar-nav li a:hover {
+			color: #fff !important;
+		}
+
+		.navbar-nav li.active a {
+			color: #fff !important;
+			background-color:#29292c !important;
+		}
+
+		.navbar-default .navbar-toggle {
+			border-color: transparent;
+		}
+
+		.open .dropdown-toggle {
+			color: #fff ;
+			background-color: #555 !important;
+		}
+
+/*Search Box---------------------------------------------------------------------------------------------------*/
+        
+        .search-box {
+            display:none;
+            background-color: gainsboro;
+            position:fixed;
+            top:50px;
+            height: auto;
+            width:100%;
+            margin: 0;
+            padding: 3%;
+            z-index: 10;
+           
+        }
+
+        .search-form {
+            font-size: 1em;
+            top: 0;
+        }
+
+/*Carousel---------------------------------------------------------------------------------------------------*/
+
+		.carousel-button {
+			background-color: #b32400;
+			border-color: #b32400;
+			box-shadow: 1px 1px 8px black, -1px -1px 10px black;
+		}
+
+		.carousel-control.left {
+            background-image: none;
+ 			background-image: none;
+			background-image: none;
+			background-image: none;
+			background-repeat: none;
+			filter: none;
+		}
+
+		.carousel-control.right {
+			right: 0;
+			left: auto;
+			background-image: none;
+			background-image: none;
+			background-image: none;
+			background-image: none;
+			background-repeat: none;
+			filter: none;
+		}
+
+		.carousel-indicators {
+			display:none;
+		}
+
+		.carousel-title p {
+			font-size:5px;
+		}
+
+		.carousel-title h1 {
+			font-size:20px;
+		}
+
+		.carousel-title-background {
+			opacity: 1;
+			background: linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0 ,1));
+			border-radius: 0px 0px 0px 0px;
+			position: absolute;
+			width: 60%;
+			height:50%;
+			top: 50px;
+			left: 20%;
+			z-index: 1;
+			display:none;
+		}
+
+		.carousel-title-frame {
+			color: white;
+			text-transform: uppercase;
+			position: absolute;
+			width: 58%;
+			margin: 1%;
+			top: 30px;
+			left: 20%;
+			text-align: center;
+			z-index: 2;
+			display:none;
+		}
+
+		.carousel-title {
+			border-width: 1px;
+			border-style: solid;
+			border-color: white;
+		}
+
+		.carousel-title p {
+			font-size: 1em;
+			margin: 0;
+			padding: 0;
+		}
+
+		.carousel-title h1 {
+			margin: 0;
+			padding: 0;
+			font-style: strong;
+			font-size: 3em;
+			font-family: Tempus Sans ITC;
+		}
+
+		.carousel-title-footer {
+			color: white;
+			font-family: Lato, sans-serif;
+			position: relative;
+			margin-top: 3%;
+			text-align: center;
+			text-shadow: 4px 4px 5px black, -1px -1px 10px black;
+		}
+
+		.carousel-title-footer {
+			font-size:17px;
+		}
+
+		.hidden-mdb {
+			display:none;
+		}
+
+	@media (min-width: 700px) {
+
+		.carousel {
+			position: relative;
+		}
+
+		.carousel-button {
+			background-color: #b32400;
+			border-color: #b32400;
+			box-shadow: 1px 1px 8px black, -1px -1px 10px black;
+		}
+
+		.hidden-smb {
+			display:none;
+		}
+
+		.carousel-inner img {
+			width: 100%;
+			margin: auto;
+			z-index: -3;
+		}
+
+		.carousel-caption {
+			padding: 0;
+			margin: 0;
+			text-align: left;
+			text-align: top;
+			z-index: 2;
+		}
+
+		.carousel-caption h3 {
+			color: #fff !important;
+		}
+
+		.carousel-indicators {
+				display:initial;
+		}
+
+		.carousel-indicators li.active {
+	        background-color: none;
+			background-image: none;
+		}
+
+		.carousel-indicators li {
+		    border-color: #f4511e;
+		}
+
+		.carousel-title-frame {
+			color: white;
+			text-transform: uppercase;
+			position: absolute;
+			width: 33%;
+			margin: 1%;
+			top: 70px;
+			left: 12%;
+			text-align: center;
+			z-index: 2;
+			display:none;
+		}
+
+		.carousel-title {
+			border-width: 1px;
+			border-style: solid;
+			border-color: white;
+		}
+
+		.carousel-title p {
+			font-size:1.5em;
+			margin: 0;
+			padding: 0;
+		}
+
+		.carousel-title h1 {
+			margin: 0;
+			padding: 0;
+			font-style: strong;
+			font-size:5em;
+			font-family: Tempus Sans ITC;
+		}
+
+		.carousel-title-footer {
+			color: white;
+			font-size:27px;
+			font-family: Lato, sans-serif;
+			position: relative;
+			margin-top: 3%;
+			text-align: center;
+			text-shadow: 4px 4px 5px black, -1px -1px 10px black;
+		}
+
+		.carousel-title-background {
+			opacity: 1;
+			background: linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0 ,1));
+		    background: -webkit-linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0 ,1)); /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0 ,1)); /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(to top, rgba(255,0,0,0), rgba(0, 0, 0 ,1)); /* For Firefox 3.6 to 15 */
+			border-radius: 0px 0px 0px 0px;
+			position: absolute;
+			width: 35%;
+			height:50%;
+			top: 50px;
+			left: 12%;
+			z-index: 1;
+			display:none;
+		}
+
+		.visible-mdb {
+			display:inline;
+		}
+
+		#promo {
+			font-size: 35px;
+			color: #b32400;
+			text-shadow: 4px 4px 5px black, -1px -1px 10px black;
+		}
+
+	}
+
+	@media (min-width: 1500px) {
+
+		.carousel-indicators {
+			display:initial;
+		}
+
+		.carousel-title h1 {
+			font-size:75px;
+		}
+
+	}
+
+/*Containers and panels---------------------------------------------------------------------------------------------------*/
+
+		.bg-about {
+			background-color: #474e5d;
+			color: #ffffff;
+			font-size:1.5em;
+		}
+
+		.bg-contact {
+			padding-left: 50px;
+			padding-right: 50px;
+			padding-bottom: 10px;
+			font-size:1.5em;
+		}
+
+		.bg-footer {
+			background-color: #2f2f2f;
+			color: #ffffff;
+			font-size:1.5em;
+		}
+
+		.bg-footer a {
+			background-color: #2f2f2f;
+			color: #ffffff;
+			font-size:1em;
+		}
+
+		.center {
+			line-height: 300px;
+			height: 300px;
+			text-align: center;
+		}
+
+		.containers {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+		.img-pannel {
+			min-width: 100%;
+			max-width: 100%;
+			height: auto;
+			padding: 0;
+			margin: 0;
+		}
+
+		.padding {
+			padding-left: 40px;
+			padding-right: 60px;
+		}
+
+		.panel-home {
+			background-color: #f2f2f2;
+			border: 1px solid #2f2f2f;
+			border-radius:0;
+			transition: box-shadow 0.5s;
+			width: 100%;
+			min-height: 730px;
+		}
+
+		.panel-body-home {
+		   padding: 0;
+		   margin: 0;
+		}
+
+		.panel-home:hover {
+			box-shadow: 5px 0px 40px rgba(0,0,0, 0.2);
+		}
+
+		.panel-footer-home .btn:hover {
+			border: 1px solid #2f2f2f;
+			background-color: #fff !important;
+			color: #2f2f2f;
+		}
+
+		.panel-heading-home {
+			color: #ffffff !important;
+			background-color: #2f2f2f !important;
+			padding: 25px;
+			border-bottom: 1px solid #2f2f2f !important;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+
+		.panel-footer-home {
+			background-color: #f2f2f2;
+			min-height: 250px;
+		}
+
+		.panel-footer-home h3 {
+			font-size: 32px;
+		}
+
+		.panel-footer-home h4 {
+			color: #aaa;
+			font-size: 14px;
+		}
+
+		.panel-footer-home .btn {
+			margin: 15px 0;
+			background-color: #2f2f2f;
+			color: #fff;
+		}
+
+		.thumbnail {
+			padding: 0 0 15px 0;
+			border: none;
+			border-radius: 0;
+		}
+
+		.thumbnail img {
+			width: 50%;
+			height: 50%;
+			margin-bottom: 10px;
+		}
+
+        #destinations {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+		#img-holiday {
+			width: 100%;
+			max-width: 300px;
+			max-height: 300px;
+  		}
+
+
+/*Map---------------------------------------------------------------------------------------------------*/
+
+	#map {
+		height: 400px; width: 100%;
+	}
+
+/*Modal---------------------------------------------------------------------------------------------------*/
+
+	.modal-body {
+		background-color: #1a1a1a;
+		color: white;
+		padding-left: 7%;
+		font-size: 1.5em;
+		margin-top: -15px;
+		margin-bottom: -15px;
+		line-height: 1.4em;
+	}
+
+	.modal-content {
+		background-color: #262626;
+		color: white;
+		text-shadow: -1px -1px 5px black, 1px 1px 5px black;
+	}
+
+	.modal-footer {
+		background-color: #262626;
+		color: white;
+		padding-left: 7%;
+	}
+
+	.modal-header {
+		background-color: #262626;
+	}
+
+	.modal-header button {
+		color: white;
+		opacity: 0.9;
+	}
+
+	.modal-header button:hover {
+		color: #b3b3b3;
+		opacity: 1;
+	}
+
+	.modal-title {
+		color: white;
+		padding-left: 5%;
+		font-size: 2em;
+	}
+
+/*Destinations---------------------------------------------------------------------------------------------------*/
+
+    .panel-destinations-body {
+       
+    }
+
+    .panel-destinations-btn-area {
+        position: relative;
+        min-height:100%;
+        height:16em;
+        line-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .btn-destination {
+        position:absolute;
+        float: right;
+        
+    }
+
+    .table {
+        vertical-align:middle;
+    }
+
+    .destination-bar {
+		margin: 2%;
+        padding-left:3%;
+	}
+
+    .avatar {
+        height:auto;
+        width:100%;
+        
+    }
+
+    .avatar-column {
+        
+        text-align:center;
+    }
+
+/*Travel Description---------------------------------------------------------------------------------------------------*/
+
+    .travel-description-carousel {
+        max-height: 25em;
+    }
+
+    .panel-description-carousel {
+        padding: 0;
+    }
+
+    .panel-heading-description-right {
+        
+			color: #ffffff !important;
+			background-color: #2f2f2f !important;
+			padding: 15px;
+			border-bottom: 1px solid #2f2f2f !important;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		
+    }
+
+    .panel-description {
+        box-shadow: 5px 0px 40px rgba(0,0,0, 0.2);
+    }
+/*Other---------------------------------------------------------------------------------------------------*/
+
+    .arrow-to-top {
+		width: 50%;
+        height: 50%;
+	}
+
+    .success-view {
+		margin: 1%;
+	}
+
+     th, td {
+         padding:50px;
+         text-align:center;
+         vertical-align:middle;
+     }
