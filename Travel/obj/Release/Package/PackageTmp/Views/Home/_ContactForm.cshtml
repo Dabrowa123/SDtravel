@@ -1,0 +1,31 @@
+﻿
+
+
+@model Travel.Models.ContactModels
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "ContactContainer",
+        HttpMethod = "POST"
+    };
+}
+@using (Ajax.BeginForm("_ContactForm", ajaxOpts))
+{
+    @Html.ValidationSummary(true)
+    <div class="row form-group">
+        <div class="col-sm-6 form-group">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Name" } })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+    @Html.TextAreaFor(model => model.Comment, new { @class = "form-control", @placeholder = "Message", @rows = "5" })
+    @Html.ValidationMessageFor(model => model.Comment)
+    <div class="col-lg-12">
+        <br />
+        <button class="btn btn-default pull-right" type="submit">Send</button>
+    </div>
+}

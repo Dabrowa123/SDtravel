@@ -324,6 +324,7 @@
     <None Include="Properties\PublishProfiles\Default Settings %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\SDportfolio - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\sdportfolio - FTP.pubxml" />
@@ -335,6 +336,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -390,8 +393,10 @@
     <Content Include="Views\Destinations\Edit.cshtml" />
     <Content Include="Views\Destinations\Index.cshtml" />
     <Content Include="Views\Destinations\SearchBox.cshtml" />
-    <Content Include="Views\Home\Success.cshtml" />
     <Content Include="Views\Destinations\Index - Copy.cshtml" />
+    <Content Include="Views\Home\_Success.cshtml" />
+    <Content Include="Views\Home\_Error.cshtml" />
+    <Content Include="Views\Home\_ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

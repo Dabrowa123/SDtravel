@@ -34,9 +34,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="BackToHomePage" href="http://simonoak-001-site1.itempurl.com/#myCarousel">HOME</a></li>
+                    <li><a class="BackToHomePage" href="http://simonoakwood-001-site1.ftempurl.com/#myCarousel">HOME</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle, BackToHomePage" data-toggle="dropdown" href="http://simonoak-001-site1.itempurl.com/#destinations">
+                        <a class="dropdown-toggle, BackToHomePage" data-toggle="dropdown" href="http://simonoakwood-001-site1.ftempurl.com/#destinations">
                             DESTINATIONS
                             <span class="caret"></span>
                         </a>
@@ -46,8 +46,8 @@
                             <li><a onclick="location.href='@Url.Action("Index","Destinations")/index?sitedestination=canary islands'">CANARY ISLANDS</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://simonoak-001-site1.itempurl.com/#about">ABOUT US</a></li>
-                    <li><a href="http://simonoak-001-site1.itempurl.com/#contact">CONTACT</a></li>
+                    <li><a href="http://simonoakwood-001-site1.ftempurl.com/#about">ABOUT US</a></li>
+                    <li><a href="http://simonoakwood-001-site1.ftempurl.com/#contact">CONTACT</a></li>
                     <li><a id="search-button" href="#"><span class="glyphicon glyphicon-search"></span></a></li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
             <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
                 <span class="glyphicon glyphicon-chevron-up arrow-to-top"></span>
             </a><br><br>
-            <p>Follow The Travel Agency Theme on <a href="https://github.com/Dabrowa123/SDPortfolio">GitHub</a></p>
+            <p>Follow The Travel Agency Theme on <a href="https://github.com/Dabrowa123/SDTravel">GitHub</a></p>
         </footer>
     </div>
 
@@ -86,13 +86,12 @@
                 <div class="modal-body">
                     <h4>In this theme you can find:</h4>
                     <ul>
-                        <li>Fixed navigation bar with scroolspy effect</li>
                         <li>Upgraded bootstrap's carousel</li>
                         <li>Google Map</li>
-                        <li>Interactive jQuerry's functions in pannels and buttons</li>
-                        <li>Fully working contact form</li>
+                        <li>Interactive jQuerry's effects in pannels and buttons</li>
+                        <li>Contact form with validation and AJAX features</li>
                         <li>Simply database with search engine</li>
-                        <li>Page is responsive and mobile first designed</li>
+                        <li>Page is fully responsive and mobile first designed</li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -107,5 +106,10 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/MyJquery.js")
     @RenderSection("scripts", required: false)
+
+    
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
 </body>
 </html>

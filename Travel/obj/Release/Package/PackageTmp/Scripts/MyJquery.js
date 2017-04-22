@@ -34,7 +34,7 @@
 
            // slide in elements on website (and prevent sliding when redirecting)
          
-           var url = "http://simonoak-001-site1.itempurl.com/";
+           var url = "http://simonoakwood-001-site1.ftempurl.com/";
            if (window.location.href == url)
            {
                $(window).scroll(function () {

@@ -16,8 +16,9 @@ namespace Travel.Controllers
             return View();
         }
 
+        
         [HttpPost]
-        public ActionResult Index(ContactModels c)
+        public ActionResult _ContactForm(ContactModels c)
         {
             if (ModelState.IsValid)
             {
@@ -35,7 +36,7 @@ namespace Travel.Controllers
                     client.Port = 587;
                     client.EnableSsl = true;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    client.Credentials = new System.Net.NetworkCredential("sdportfolio.travel@gmail.com", "DrEaM oN :P");
+                    client.Credentials = new System.Net.NetworkCredential("sdportfolio.travel@gmail.com", "*****");
 
                     msg.To.Add("sdportfolio.travel@gmail.com");
                     msg.From = from;
@@ -48,14 +49,14 @@ namespace Travel.Controllers
                     msg.Body = sb.ToString();
                     client.Send(msg);
                     msg.Dispose();
-                    return View("Success");
+                    return PartialView("_Success");
                 }
                 catch (Exception)
                 {
-                    return View("Error");
+                    return PartialView("_Error");
                 }
             }
-            return View();
+            return PartialView();
         }
     }
 }

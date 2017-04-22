@@ -3,6 +3,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home Page";
+    
 }
 
     <!-- Carousel -->
@@ -148,38 +149,20 @@
     <!-- Contact -->
     <div id="contact" class="container-fluid containers bg-contact">
         <h2 class="text-center">CONTACT</h2><br>
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
-            <div class="row">
-                <div class="col-sm-5">
-                    <p>Contact us and we'll get back to you within 24 hours.</p>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> Sittingbourne, UK</p>
-                    <p><span class="glyphicon glyphicon-phone"></span> 07459470915</p>
-                    <p><span class="glyphicon glyphicon-envelope"></span> sdportfolio.travel@gmail.com</p>
-                </div>
-                <div class="col-sm-7">
-                        <div class="row form-group">
-                            <div class="col-sm-6 form-group">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Name" } })
-                                @Html.ValidationMessageFor(model => model.Name)
-                            </div>
-                            <div class="col-sm-6">
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
-                                @Html.ValidationMessageFor(model => model.Email)
-                            </div>
-                        </div>
-                            @Html.TextAreaFor(model => model.Comment, new { @class = "form-control", @placeholder = "Message", @rows = "5" })
-                            @Html.ValidationMessageFor(model => model.Comment)
-                </div>
+       
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact us and we'll get back to you within 24 hours.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Sittingbourne, UK</p>
+                <p><span class="glyphicon glyphicon-phone"></span> 07459470915</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> sdportfolio.travel@gmail.com</p>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <br />
-                    <button class="btn btn-default pull-right" type="submit">Send</button>
+           
+                <div id="ContactContainer" class="col-sm-7">
+                   @{ Html.RenderPartial("_ContactForm");  }
                 </div>
-            </div>
-        }
+                
+        </div>
     </div>
 
     <!-- Map -->

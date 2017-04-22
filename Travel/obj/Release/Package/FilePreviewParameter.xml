@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="simonoak-001-site1" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="simonoakwood-001-site1" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=sql5028.myasp.net;Initial Catalog=DB_A189CF_simonoak;User ID=DB_A189CF_simonoak_admin;Password=Olcia12345" tags="">
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=sql6001.myasp.net;Initial Catalog=DB_A1EAAC_SimonOakwood;Persist Security Info=True;User ID=DB_A1EAAC_SimonOakwood_admin;Password=Olcia12345" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
-  <parameter name="TravelModelContainer-Web.config Connection String" description="" value="metadata=res://*/Models.TravelModel.csdl|res://*/Models.TravelModel.ssdl|res://*/Models.TravelModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=sql5028.myasp.net;Initial Catalog=DB_A189CF_simonoak;User ID=DB_A189CF_simonoak_admin;Password=Olcia12345&quot;" tags="">
+  <parameter name="TravelModelContainer-Web.config Connection String" description="" value="metadata=res://*/Models.TravelModel.csdl|res://*/Models.TravelModel.ssdl|res://*/Models.TravelModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=sql6001.myasp.net;Initial Catalog=DB_A1EAAC_SimonOakwood;Persist Security Info=True;User ID=DB_A1EAAC_SimonOakwood_admin;Password=Olcia12345&quot;" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Szymon\\Documents\\Visual\ Studio\ 2015\\Projects\\Travel\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TravelModelContainer']/@connectionString" />
   </parameter>
 </parameters>

@@ -1,0 +1,18 @@
+﻿
+
+
+    @{
+        AjaxOptions ajaxOpts = new AjaxOptions
+        {
+            UpdateTargetId = "ContactContainer",
+            HttpMethod = "POST"
+        };
+    }
+<p>Your message has been sent</p>
+<br />
+@using (Ajax.BeginForm("_ContactForm", ajaxOpts))
+{
+    <button class="btn btn-default pull-right" type="submit">Send Another Message</button>
+}
+
+
